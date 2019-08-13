@@ -1,21 +1,14 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company:  University of Utah     
+// Engineer:   Donovan Bidlack
 // 
 // Create Date: 07/17/2019 08:10:12 PM
-// Design Name: 
 // Module Name: top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Project Name: MLA on an FPGA
+// Target Devices: Arty Z7: APSoC Zynq-7000
+// Description: Takes I2C input from the HFT Raspberry PI and returns
+//                      the decisions made by the Machine Learning Algorithm
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -32,11 +25,24 @@ module top(
 	output reg [3:0] led,
 	output reg ck_scl,
 	output ck_sda
-
-	);
+);
 	
 
 always @ (posedge clk)
+begin
+    if(clk)
+       begin
+        ck_scl = 1;
+        led[0] = 1;
+       end
+    else
+       begin
+        ck_scl = 0;
+        led[1] = 0;
+       end
+end
+
+always @ (negedge clk)
 begin
     if(clk)
        begin
