@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:{C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/ArtyZ7-20.xdc} rfile:../../../ML-HFT-FPGA.srcs/constrs_1/new/ArtyZ7-20.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/ArtyZ7-20.xdc rfile:../../../ML-HFT-FPGA.srcs/constrs_1/new/ArtyZ7-20.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H16    IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_35 Sch=SYSCLK
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]

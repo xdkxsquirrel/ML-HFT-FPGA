@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Wed Jul 17 20:42:07 2019
-| Host                      : Donovan running 64-bit major release  (build 9200)
+| Date                      : Mon Aug 26 13:13:13 2019
+| Host                      : Bidlack running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_io_placed.rpt
 | Design                    : top
 | Device                    : xc7z020
@@ -309,8 +309,8 @@ Table of Contents
 | P12        |             |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | P13        |             |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | P14        | led[1]      | High Range | IO_L6P_T0_34            | TRISTATE    | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| P15        | ck_sda      | High Range | IO_L24P_T3_34           | TRISTATE    | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| P16        | ck_scl      | High Range | IO_L24N_T3_34           | OUTPUT      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| P15        | ck_sda      | High Range | IO_L24P_T3_34           | OUTPUT      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| P16        | ck_scl      | High Range | IO_L24N_T3_34           | INPUT       | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | P17        |             |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | P18        |             | High Range | IO_L23N_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | P19        |             | High Range | IO_L13N_T2_MRCC_34      | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -328,7 +328,7 @@ Table of Contents
 | R11        |             | Dedicated  | DONE_0                  | Config      |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R12        |             |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | R13        |             |            | VCCINT                  | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| R14        | led[0]      | High Range | IO_L6N_T0_VREF_34       | OUTPUT      | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| R14        | led[0]      | High Range | IO_L6N_T0_VREF_34       | TRISTATE    | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | R15        |             | High Range | VCCO_34                 | VCCO        |             |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | R16        |             | High Range | IO_L19P_T3_34           | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R17        |             | High Range | IO_L19N_T3_VREF_34      | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
