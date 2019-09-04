@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Aug 26 13:11:46 2019
-# Process ID: 9628
+# Start of session at: Wed Sep  4 12:10:25 2019
+# Process ID: 11988
 # Current directory: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2328 
+INFO: Helper process launched with PID 13240 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 728.387 ; gain = 177.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 729.625 ; gain = 177.762
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
 INFO: [Synth 8-6157] synthesizing module 'UART_RX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
@@ -31,36 +31,19 @@ INFO: [Synth 8-6157] synthesizing module 'UART_RX' [C:/Users/BidlackD/Documents/
 WARNING: [Synth 8-6014] Unused sequential element clock_count_register_reg was removed.  [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:52]
 WARNING: [Synth 8-6014] Unused sequential element bit_index_register_reg was removed.  [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:53]
 INFO: [Synth 8-6155] done synthesizing module 'UART_RX' (1#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
-INFO: [Synth 8-6157] synthesizing module 'MLA' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
-	Parameter MAXWEIGHT bound to: 6'b100100 
-	Parameter MINWEIGHT bound to: 6'b000000 
+INFO: [Synth 8-6157] synthesizing module 'LED' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/led.v:15]
 	Parameter ONE bound to: 8'b00110001 
 	Parameter TWO bound to: 8'b00110010 
 	Parameter THREE bound to: 8'b00110011 
 	Parameter FOUR bound to: 8'b00110100 
 	Parameter FIVE bound to: 8'b00110101 
-INFO: [Synth 8-6155] done synthesizing module 'MLA' (2#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
-INFO: [Synth 8-6157] synthesizing module 'UART_TX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
-	Parameter CLKS_PER_UART_CYCLE bound to: 1085 - type: integer 
-	Parameter IDLE_STATE bound to: 3'b000 
-	Parameter START_BIT_STATE bound to: 3'b001 
-	Parameter DATA_BITS_STATE bound to: 3'b010 
-	Parameter STOP_BIT_STATE bound to: 3'b011 
-	Parameter CLEANUP_STATE bound to: 3'b100 
-WARNING: [Synth 8-6014] Unused sequential element clock_count_register_reg was removed.  [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:47]
-INFO: [Synth 8-6155] done synthesizing module 'UART_TX' (3#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
-WARNING: [Synth 8-3848] Net led4_r in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:20]
-WARNING: [Synth 8-3848] Net led4_g in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:21]
-WARNING: [Synth 8-3848] Net led4_b in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'LED' (2#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/led.v:15]
 WARNING: [Synth 8-3848] Net led5_r in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:23]
 WARNING: [Synth 8-3848] Net led5_g in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:24]
 WARNING: [Synth 8-3848] Net led5_b in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:25]
 WARNING: [Synth 8-3848] Net led in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:26]
-WARNING: [Synth 8-3848] Net received_data_valid in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:30]
-INFO: [Synth 8-6155] done synthesizing module 'top' (4#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
-WARNING: [Synth 8-3331] design top has unconnected port led4_r
-WARNING: [Synth 8-3331] design top has unconnected port led4_g
-WARNING: [Synth 8-3331] design top has unconnected port led4_b
+WARNING: [Synth 8-3848] Net ck_sda in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'top' (3#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
 WARNING: [Synth 8-3331] design top has unconnected port led5_r
 WARNING: [Synth 8-3331] design top has unconnected port led5_g
 WARNING: [Synth 8-3331] design top has unconnected port led5_b
@@ -68,6 +51,7 @@ WARNING: [Synth 8-3331] design top has unconnected port led[3]
 WARNING: [Synth 8-3331] design top has unconnected port led[2]
 WARNING: [Synth 8-3331] design top has unconnected port led[1]
 WARNING: [Synth 8-3331] design top has unconnected port led[0]
+WARNING: [Synth 8-3331] design top has unconnected port ck_sda
 WARNING: [Synth 8-3331] design top has unconnected port btn[3]
 WARNING: [Synth 8-3331] design top has unconnected port btn[2]
 WARNING: [Synth 8-3331] design top has unconnected port btn[1]
@@ -75,7 +59,7 @@ WARNING: [Synth 8-3331] design top has unconnected port btn[0]
 WARNING: [Synth 8-3331] design top has unconnected port sw[1]
 WARNING: [Synth 8-3331] design top has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 791.863 ; gain = 241.453
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 793.379 ; gain = 241.516
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -88,10 +72,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 791.863 ; gain = 241.453
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 793.379 ; gain = 241.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 791.863 ; gain = 241.453
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 793.379 ; gain = 241.516
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -103,30 +87,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 909.285 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 882.934 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 909.285 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 882.934 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_RX'
-INFO: [Synth 8-5546] ROM "transmit_byte" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_TX'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -134,15 +116,8 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_
          START_BIT_STATE |                                1 |                              001
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'UART_RX'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-              IDLE_STATE |                                0 |                              000
-         START_BIT_STATE |                                1 |                              001
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'UART_TX'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -155,13 +130,10 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input      7 Bit        Muxes := 1     
-	   6 Input      7 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -175,22 +147,13 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 3     
-Module MLA 
+Module LED 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      7 Bit        Muxes := 1     
-	   6 Input      7 Bit        Muxes := 1     
-Module UART_TX 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -207,9 +170,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design top has unconnected port led4_r
-WARNING: [Synth 8-3331] design top has unconnected port led4_g
-WARNING: [Synth 8-3331] design top has unconnected port led4_b
 WARNING: [Synth 8-3331] design top has unconnected port led5_r
 WARNING: [Synth 8-3331] design top has unconnected port led5_g
 WARNING: [Synth 8-3331] design top has unconnected port led5_b
@@ -217,15 +177,20 @@ WARNING: [Synth 8-3331] design top has unconnected port led[3]
 WARNING: [Synth 8-3331] design top has unconnected port led[2]
 WARNING: [Synth 8-3331] design top has unconnected port led[1]
 WARNING: [Synth 8-3331] design top has unconnected port led[0]
+WARNING: [Synth 8-3331] design top has unconnected port ck_sda
 WARNING: [Synth 8-3331] design top has unconnected port btn[3]
 WARNING: [Synth 8-3331] design top has unconnected port btn[2]
 WARNING: [Synth 8-3331] design top has unconnected port btn[1]
 WARNING: [Synth 8-3331] design top has unconnected port btn[0]
 WARNING: [Synth 8-3331] design top has unconnected port sw[1]
 WARNING: [Synth 8-3331] design top has unconnected port sw[0]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rx/data_valid_register_reg )
+INFO: [Synth 8-3886] merging instance 'ledblock/led4_b_reg' (FDE) to 'ledblock/led4_g_reg'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\ledblock/led4_r_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ledblock/led4_g_reg )
 WARNING: [Synth 8-3332] Sequential element (rx/FSM_sequential_state_reg) is unused and will be removed from module top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -237,13 +202,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 882.934 ; gain = 331.070
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -254,10 +219,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (tx/FSM_sequential_state_reg) is unused and will be removed from module top.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\tx/serial_reg )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 909.285 ; gain = 358.875
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 890.152 ; gain = 338.289
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -281,7 +244,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -294,7 +257,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -306,25 +269,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -340,8 +303,8 @@ Report Cell Usage:
 +------+------+------+
 |      |Cell  |Count |
 +------+------+------+
-|1     |OBUF  |     1|
-|2     |OBUFT |    10|
+|1     |OBUF  |     3|
+|2     |OBUFT |     8|
 +------+------+------+
 
 Report Instance Areas: 
@@ -351,25 +314,25 @@ Report Instance Areas:
 |1     |top      |       |    11|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 918.766 ; gain = 250.934
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 918.766 ; gain = 368.355
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 904.977 ; gain = 263.559
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 904.977 ; gain = 353.113
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 941.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 926.043 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+22 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 941.242 ; gain = 647.094
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 941.242 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 926.043 ; gain = 635.211
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 926.043 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Aug 26 13:12:25 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  4 12:11:07 2019...

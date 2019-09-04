@@ -35,6 +35,7 @@ wire active;
 wire transmit_done;
 
 UART_RX rx(clk, ck_scl, data_valid, received_byte);
-MLA mla(clk, received_data_valid, received_byte, transmit_data_valid, transmit_byte);
-UART_TX tx(clk, transmit_data_valid, transmit_byte, active, ck_sda, transmit_done);
+LED ledblock(clk, data_valid, received_byte, led4_r, led4_g, led4_b);
+//MLA mla(clk, received_data_valid, received_byte, transmit_data_valid, transmit_byte);
+//UART_TX tx(clk, transmit_data_valid, transmit_byte, active, ck_sda, transmit_done);
 endmodule

@@ -29,9 +29,8 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v
   C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v
-  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v
+  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/led.v
   C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
