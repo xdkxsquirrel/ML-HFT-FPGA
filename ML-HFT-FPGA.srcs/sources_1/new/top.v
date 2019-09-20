@@ -24,7 +24,7 @@ module top(
 	output     led5_g,
 	output     led5_b,
 	output reg [3:0] led,
-	output     ck_sda
+	output reg ck_sda
 );
 
 wire received_data_valid;
@@ -34,8 +34,20 @@ wire [7:0] transmit_byte;
 wire active;
 wire transmit_done;
 
-UART_RX rx(clk, ck_scl, data_valid, received_byte);
-LED ledblock(clk, data_valid, received_byte, led4_r, led4_g, led4_b);
+always @ (clk)
+begin
+    if(clk)
+       begin
+        ck_sda <= 1;
+       end
+    else
+       begin
+        ck_sda <= 0;
+       end
+end
+
+//UART_RX rx(clk, ck_scl, data_valid, received_byte);
+//LED ledblock(clk, data_valid, received_byte, led4_r, led4_g, led4_b);
 //MLA mla(clk, received_data_valid, received_byte, transmit_data_valid, transmit_byte);
 //UART_TX tx(clk, transmit_data_valid, transmit_byte, active, ck_sda, transmit_done);
 endmodule
