@@ -68,7 +68,8 @@ static void MX_USART1_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  uint8_t aTxBuffer[] = "501500501501501500";;
+  uint8_t aRxBuffer[1];
   /* USER CODE END 1 */
   
 
@@ -100,7 +101,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    if(HAL_UART_Transmit(&huart1, (uint8_t *)aTxBuffer, sizeof(aTxBuffer), 5000)!= HAL_OK)
+    {
+      Error_Handler();   
+    }
+    
+    if(HAL_UART_Receive(&huart1, (uint8_t *)aRxBuffer, sizeof(aRxBuffer), 10000) != HAL_OK)
+    {
+      Error_Handler();  
+    }
+    //HAL_Delay(5000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
