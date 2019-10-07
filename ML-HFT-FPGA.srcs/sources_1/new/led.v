@@ -6,7 +6,7 @@
 // Create Date: 07/17/2019 08:10:12 PM
 // Module Name: MLA
 // Project Name: MLA on an FPGA
-// Target Devices: Arty Z7: APSoC Zynq-7000
+// Target Devices: CMOD S7-25: Spartan 7
 // Description: Takes UART input from the HFT Raspberry PI and returns
 //                      the decisions made by the Machine Learning Algorithm
 // 

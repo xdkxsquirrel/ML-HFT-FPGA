@@ -6,11 +6,11 @@
 // Create Date: 09/20/2019 10:29:45 AM
 // Module Name: UART_TB
 // Project Name: MLA on an FPGA
-// Target Devices: Arty Z7: APSoC Zynq-7000
+// Target Devices: CMOD S7-25: Spartan 7
 // Description: UART Protocol TestBench
 // 
-// CLKS_PER_UART_CYCLE = 125MHz (might be 50MHz) / 115200
-// 125000000 / 115200 = 1085
+// CLKS_PER_UART_CYCLE = 12MHz / 115200
+// 12000000 / 115200 = 104
 //
 //////////////////////////////////////////////////////////////////////////////////
 `include "UART_TX.v"
@@ -20,9 +20,8 @@ module UART_TB ();
  
 // Testbench uses a 10 MHz clock
 // Want to interface to 115200 baud UART
-// 10000000 / 115200 = 87 Clocks Per Bit.
 parameter CLOCK_PERIOD_NS = 100;
-parameter CLKS_PER_UART_CYCLE    = 87;
+parameter CLKS_PER_UART_CYCLE    = 104;
 parameter BIT_PERIOD      = 8600;
 
 reg testbench_clock = 0;

@@ -6,11 +6,11 @@
 // Create Date: 08/26/2019 12:12:12 PM
 // Module Name: UART_RX
 // Project Name: MLA on an FPGA
-// Target Devices: Arty Z7: APSoC Zynq-7000
+// Target Devices: CMOD S7-25: Spartan 7
 // Description: UART Protocol Receiver of baudrate of 115200
 // 
-// CLKS_PER_UART_CYCLE = 125MHz (might be 50MHz) / 115200
-// 125000000 / 115200 = 1085
+// CLKS_PER_UART_CYCLE = 12MHz / 115200
+// 12000000 / 115200 = 104
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@ module UART_RX(
   output [7:0] received_byte
 );
   
-parameter CLKS_PER_UART_CYCLE   = 1085;  
+parameter CLKS_PER_UART_CYCLE   = 104;  
 parameter IDLE_STATE            = 3'b000;
 parameter START_BIT_STATE       = 3'b001;
 parameter DATA_BITS_STATE       = 3'b010;
