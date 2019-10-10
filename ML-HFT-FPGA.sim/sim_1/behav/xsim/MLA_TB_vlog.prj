@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../ML-HFT-FPGA.srcs/sources_1/new/MLA.v" \
 "../../../../ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v" \
 "../../../../ML-HFT-FPGA.srcs/sources_1/new/MLA_TB.v" \
 
