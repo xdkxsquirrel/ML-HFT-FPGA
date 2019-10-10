@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/BidlackD/Documents/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc rfile:../../../ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc rfile:../../../ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M9    IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_14 Sch=gclk
 set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
@@ -19,8 +19,6 @@ set_property src_info {type:XDC file:1 line:22 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN J1    IOSTANDARD LVCMOS33 } [get_ports { led[2] }]; #IO_L16N_T2_34 Sch=led[3]
 set_property src_info {type:XDC file:1 line:23 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN E1    IOSTANDARD LVCMOS33 } [get_ports { led[3] }]; #IO_L8N_T1_34 Sch=led[4]
-set_property src_info {type:XDC file:1 line:37 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN L12   IOSTANDARD LVCMOS33 } [get_ports { tx }]; #IO_L6N_T0_D08_VREF_14 Sch=uart_rxd_out
 set_property src_info {type:XDC file:1 line:47 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L1    IOSTANDARD LVCMOS33 } [get_ports { pio1 }]; #IO_L18N_T2_34 Sch=pio[01]
 set_property src_info {type:XDC file:1 line:48 export:INPUT save:INPUT read:READ} [current_design]

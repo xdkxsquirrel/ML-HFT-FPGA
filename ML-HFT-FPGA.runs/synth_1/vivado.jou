@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Oct  7 13:10:00 2019
-# Process ID: 16908
-# Current directory: C:/Users/BidlackD/Documents/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
+# Start of session at: Wed Oct  9 18:00:13 2019
+# Process ID: 11080
+# Current directory: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/BidlackD/Documents/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
-# Journal file: C:/Users/BidlackD/Documents/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1\vivado.jou
+# Log file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
+# Journal file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

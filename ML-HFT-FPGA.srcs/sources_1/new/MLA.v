@@ -12,6 +12,30 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+//reg [7:0] companyWeight;
+//reg [7:0] profitWeight;
+//reg [7:0] fiveWeight;
+//reg [7:0] twitterWeight;
+//reg [7:0] movingWeight;
+//reg       companyData;
+//reg       profitData;
+//reg       fiveData;
+//reg       twitterData;
+//reg       movingData;
+
+//always @(posedge clk)
+//begin
+//  case(state)
+//    ONE:
+//      begin
+//      companyWeight <= data;
+
+
+
 module MLA(
 	input  clk,
 	input received_data_valid,
@@ -77,3 +101,5 @@ begin
     end
 end
 endmodule
+
+
