@@ -21,17 +21,17 @@ module LED(
 	output reg led4_b
 );
 
-parameter ONE       = 8'h31;
-parameter TWO       = 8'h32;
-parameter THREE     = 8'h33;
-parameter FOUR      = 8'h34;
-parameter FIVE      = 8'h35;
+parameter ONE       = 8'h30;
+parameter TWO       = 8'h31;
+parameter THREE     = 8'h32;
+parameter FOUR      = 8'h33;
+parameter FIVE      = 8'h34;
 
 initial
 begin
     led4_r <= 1;
-    led4_g <= 0;
-    led4_b <= 0;
+    led4_g <= 1;
+    led4_b <= 1;
 end
 
 always@(posedge clk)
@@ -41,29 +41,29 @@ begin
       case (received_byte)
         ONE :
           begin
-          led4_r <= 0;
+          led4_r <= 1;
           led4_g <= 1;
           led4_b <= 0;
           end
           
         TWO :
           begin
-          led4_r <= 0;
+          led4_r <= 1;
           led4_g <= 0;
           led4_b <= 1;
           end
           
         THREE :
           begin
-          led4_r <= 1;
+          led4_r <= 0;
           led4_g <= 1;
-          led4_b <= 0;
+          led4_b <= 1;
           end
           
         FOUR :
           begin
           led4_r <= 0;
-          led4_g <= 1;
+          led4_g <= 0;
           led4_b <= 1;
           end
           
