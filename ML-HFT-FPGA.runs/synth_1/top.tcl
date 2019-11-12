@@ -17,9 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7s25csga225-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,8 +31,10 @@ set_property board_part digilentinc.com:cmod-s7-25:part0:1.0 [current_project]
 set_property ip_output_repo c:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v
   C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v
-  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/led.v
+  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v
+  C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v
   C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

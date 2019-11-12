@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="MLA_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="MLA_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="32583333fs"></ZoomStartTime>
+      <ZoomEndTime time="100283334fs"></ZoomEndTime>
+      <Cursor1Time time="89000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/MLA_TB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/transmitted_byte" type="array">
+      <obj_property name="ElementShortName">transmitted_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">transmitted_byte[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/out" type="array">
+      <obj_property name="ElementShortName">out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/ready_from_MLA" type="logic">
+      <obj_property name="ElementShortName">ready_from_MLA</obj_property>
+      <obj_property name="ObjectShortName">ready_from_MLA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/out_from_MLA" type="array">
+      <obj_property name="ElementShortName">out_from_MLA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_from_MLA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/led4_r" type="logic">
+      <obj_property name="ElementShortName">led4_r</obj_property>
+      <obj_property name="ObjectShortName">led4_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/led4_g" type="logic">
+      <obj_property name="ElementShortName">led4_g</obj_property>
+      <obj_property name="ObjectShortName">led4_g</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/led4_b" type="logic">
+      <obj_property name="ElementShortName">led4_b</obj_property>
+      <obj_property name="ObjectShortName">led4_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/uut2/state" type="array">
+      <obj_property name="ElementShortName">state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/uut2/cmd_state" type="array">
+      <obj_property name="ElementShortName">cmd_state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_state[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/uut2/stock_state" type="array">
+      <obj_property name="ElementShortName">stock_state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">stock_state[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/uut2/data_state" type="array">
+      <obj_property name="ElementShortName">data_state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_state[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/uut2/tsla_weight" type="array">
+      <obj_property name="ElementShortName">tsla_weight[39:0]</obj_property>
+      <obj_property name="ObjectShortName">tsla_weight[39:0]</obj_property>
+   </wvobject>
+</wave_config>

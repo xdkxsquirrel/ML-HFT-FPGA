@@ -4,36 +4,86 @@
 // Engineer:   Donovan Bidlack
 // 
 // Create Date: 08/26/2019 12:12:12 PM
-// Module Name: convert_from_ASCII
+// Module Name: convert_to_ASCII
 // Project Name: MLA on an FPGA
 // Target Devices: CMOD S7-25: Spartan 7
-// Description: Takes ASCII from UART and converts it to hex value in FPGA.
+// Description: Takes hex values from FPGA and converts them to ASCII to be sent over UART.
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module convert_from_ASCII(
+module convert_to_ASCII(
   input        clk,
+  input        active,
   input        data_valid,
-  input  [7:0] transmitted_byte, 
-  output       ready,
-  output [7:0] out     
+  input  [39:0] data, 
+  output reg      ready,
+  output reg [7:0] current_byte_to_send     
 );
   
-parameter FIRST                 = 2'b00;
-parameter SECOND                = 2'b01;
-parameter CALCULATE             = 2'b10; 
-   
-reg [1:0] state                 = 0;
-reg [7:0] LSB_hex_value         = 0;
-reg [7:0] MSB_hex_value         = 0;
-reg       ready_reg             = 0;
-reg [7:0] output_reg            = 0; 
+parameter IDLE                  = 0;  
+parameter FIRST                 = 1;
+parameter SECOND                = 2;
+parameter THIRD                 = 3;
+parameter FOURTH                = 4;
+parameter FIFTH                 = 5;
+parameter SIXTH                 = 6;
+parameter SEVENTH               = 7;
+parameter EIGHTH                = 8;
+parameter NINTH                 = 9;
+parameter TENTH                 = 10;
+
+parameter COMPANY_START_LOCATION            =  0;
+parameter COMPANY_END_LOCATION              =  7;
+parameter FOUR_START_LOCATION               =  8;
+parameter FOUR_END_LOCATION                 = 15;
+parameter PROFIT_START_LOCATION             = 16;
+parameter PROFIT_END_LOCATION               = 23;
+parameter TWITTER_START_LOCATION            = 24;
+parameter TWITTER_END_LOCATION              = 31;
+parameter MOVING_START_LOCATION             = 32;
+parameter MOVING_END_LOCATION               = 39;
+
+reg [3:0] state                 = 0;
+reg [39:0] data_to_send         = 0;
      
 always @(posedge clk)
   begin
   case (state)
-    FIRST :
+    IDLE :
       begin
+      if(data_valid == 1)
+        begin
+        data_to_send <= data;
+        state <= FIRST;
+        ready <= 0;
+        end
+      else
+        begin
+        data_to_send <= 0;
+        state <= IDLE;
+        ready <= 0;
+        end
+      end
+      
+    FIRST:
+      begin
+      if(active == 0)
+        begin
+        current_byte_to_send <= data_to_send[COMPANY_END_LOCATION-4:COMPANY_START_LOCATION];
+        state <= SECOND;
+        ready <= 1;
+        end
+      else
+        begin
+        current_byte_to_send <= data_to_send[COMPANY_END_LOCATION-4:COMPANY_START_LOCATION];
+        state <= FIRST;
+        ready <= 0;
+        end
+      end
+      
+        
+        
+        
       ready_reg                 <= 0;
       output_reg                <= output_reg;           
       if (data_valid == 1'b1)

@@ -1,6 +1,6 @@
-webtalk_init -webtalk_dir C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/MLA_TB_behav/webtalk/
+webtalk_init -webtalk_dir C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/stock_weight_TB_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Mon Nov 11 15:48:22 2019" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Nov 11 18:07:44 2019" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2552052" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "17900fad-88d6-4e16-8954-440b8ac49d66" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "0ce2b91357fb4df5b0d942bf4d16e4c7" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "59" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "23" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-4900MQ CPU @ 2.80GHz" -context "user_environment"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "33.000 GB" -context "us
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "109 ns" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "160 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.00_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "6052_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2834092009 -regid "" -xml C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/MLA_TB_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/MLA_TB_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/MLA_TB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.01_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "6036_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 3720974002 -regid "" -xml C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/stock_weight_TB_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/stock_weight_TB_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.sim/sim_1/behav/xsim/xsim.dir/stock_weight_TB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
