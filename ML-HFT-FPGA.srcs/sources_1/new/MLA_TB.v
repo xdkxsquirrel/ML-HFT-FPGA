@@ -24,9 +24,14 @@ parameter GE                                = 7;
 parameter JPM                               = 8; 
 parameter IBM                               = 9; 
 parameter AMZN                              = 10;
-parameter STOCK                             = "1";
+
+parameter EXECUTION_CONFIRMATION            = "CCCCCCCCCC";
+parameter EXECUTE_BUY                       = "1111111111";
+parameter EXECUTE_SELL                      = "2222222222";
         
         integer has_failed;
+        reg [95:0] ASCII_Bytes;
+        reg [79:0] Expected_Reply;
         
         reg        clk;
         reg        data_received_from_UART_is_valid;
@@ -250,887 +255,91 @@ always
 
 initial
 begin
-    SendStockWeights();
-    GetStockWeights();
-    CalcBuyStock();
-    CalcWeightsPosStock();
-    CalcWeightsNegStock();
+    // ASCII_Bytes = |1CMD|1STOCK|2COMPANYWEIGHT|2FOURWEIGHT|2PROFITWEIGHT|2TWITTERWEIGHT|2MOVINGWEIGHT
+    // CMDs =   A: Set Weights   B: Get Weights  C: Calc Buy    D: Add to Weights    E: Subtract from Weights
+    // Stock is second Byte:    1 TSLA | 2 AAPL | 3 WMT | 4 JNJ | 5 GOOG | 6 XOM | 7 MSFT | 8 GE | 9 JPM | A AMZN
+    $display("################################################ Setting Weights for TSLA (10100 Values for a Sell)");
+    ASCII_Bytes = "A1AB553321C3";
+    Expected_Reply = EXECUTION_CONFIRMATION;
+    SendBytes();
+    $display(" ");
+    
+    $display("################################################ Getting Weights for TSLA");
+    ASCII_Bytes = "B1DCDCDCDCDC";
+    Expected_Reply = "AB553321C3";
+    SendBytes();
+    $display(" ");
+    
+    $display("################################################ Calc Buy for TSLA (Should Be Sell)");
+    ASCII_Bytes = "C10100010000";
+    Expected_Reply = EXECUTE_SELL;
+    SendBytes();
+    $display(" ");
+    
+    $display("################################################ Setting Weights for XOM (11100 Values for a BUY)");
+    ASCII_Bytes = "A6AB553321C3";
+    Expected_Reply = EXECUTION_CONFIRMATION;
+    SendBytes();
+    $display(" ");
+    
+    $display("################################################ Calc Buy for XOM (Should Be BUY)");
+    ASCII_Bytes = "C60101010000";
+    Expected_Reply = EXECUTE_BUY;
+    SendBytes();
+    $display(" ");
+    
+    $display("################################################ Decrease TSLA Weights for all by 5 Then Check");
+    ASCII_Bytes = "E10101010101";
+    Expected_Reply = EXECUTION_CONFIRMATION;
+    SendBytes();
+    SendBytes();
+    SendBytes();
+    SendBytes();
+    SendBytes();
+    ASCII_Bytes = "B1DCDCDCDCDC";
+    Expected_Reply = "A6502E1CBE";
+    SendBytes();
+    $display(" ");
+    
     $stop;
 end
 
-
 //////////////////////////////////////////////////////////////////////
-// SendStockWeights
+// SendBytes
 //////////////////////////////////////////////////////////////////////
-task SendStockWeights;
+task SendBytes;
 begin
-  $display("Setting Weights for Stock");
+  #6
+  // Send the 10 ASCII Bytes
+  for(integer i=12; i>0; i=i-1)
+    begin
+    data_received_from_UART_is_valid = 1;
+    data_received_from_UART = ASCII_Bytes[i*8-1 -: 8];
+    #2
+    data_received_from_UART_is_valid = 0;
+    #6;
+    end
   
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "A";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = STOCK;
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "a";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "b";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "5";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "5";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "3";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "3";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "2";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "1";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "6";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "3";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
   UART_active = 1;
   #60
-  
-  UART_active = 0;
   has_failed = 0;
-  #2
-  $display("TRANSMIT BYTE1: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
   
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE2: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE3: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE4: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE5: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE6: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE7: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE8: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE9: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE10: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
+  for(integer i=10; i>0; i=i-1)
+    begin
+    UART_active = 0;
+    #2
+    //$display("TRANSMITTED BYTE: %s", transmit_byte);
+    if(transmit_byte != Expected_Reply[i*8-1 -: 8])
+        has_failed = 1;
+    UART_active = 1;
+    #6;
+    end
+      
   if(has_failed == 0)
-    $display("################################################ SET Stock WEIGHTS Passed ######################################");
+    $display("################################################ Passed");
   else
-    $display("################################################ SET Stock WEIGHTS Failed ######################################");
-  
-    $display(" ");
-
-
+    $display("################################################ Failed");
 end
 endtask
 
-//////////////////////////////////////////////////////////////////////
-// GetStockWeights
-//////////////////////////////////////////////////////////////////////
-task GetStockWeights;
-begin
-  $display("Getting Weights for TSLA");
-  
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "B";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = STOCK;
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "d";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "c";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "d";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "c";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "d";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "c";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "d";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "c";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "d";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "c";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  UART_active = 1;
-  #60
-  
-  UART_active = 0;
-  has_failed = 0;
-  #2
-  $display("TRANSMIT BYTE1: %s", transmit_byte);
-  if(transmit_byte != "A")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE2: %s", transmit_byte);
-  if(transmit_byte != "B")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE3: %s", transmit_byte);
-  if(transmit_byte != "5")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE4: %s", transmit_byte);
-  if(transmit_byte != "5")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE5: %s", transmit_byte);
-  if(transmit_byte != "3")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE6: %s", transmit_byte);
-  if(transmit_byte != "3")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE7: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE8: %s", transmit_byte);
-  if(transmit_byte != "1")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE9: %s", transmit_byte);
-  if(transmit_byte != "6")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE10: %s", transmit_byte);
-  if(transmit_byte != "3")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  if(has_failed == 0)
-    $display("################################################ SET Stock WEIGHTS Passed ######################################");
-  else
-    $display("################################################ SET Stock WEIGHTS Failed ######################################");
-  
-    $display(" ");
-
-
-end
-endtask
-
-//////////////////////////////////////////////////////////////////////
-// CalcBuyStock
-//////////////////////////////////////////////////////////////////////
-task CalcBuyStock;
-begin
-  $display("Calculating BUY for Stock");
-  
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "C";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = STOCK;
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  UART_active = 1;
-  #60
-  
-  UART_active = 0;
-  has_failed = 0;
-  #2
-  $display("TRANSMIT BYTE1: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE2: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE3: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE4: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE5: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE6: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE7: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE8: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE9: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE10: %s", transmit_byte);
-  if(transmit_byte != "2")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  if(has_failed == 0)
-    $display("################################################ Calc Stock Buy Passed ######################################");
-  else
-    $display("################################################ Calc Stock Buy Failed ######################################");
-  
-    $display(" ");
-
-
-end
-endtask
-
-//////////////////////////////////////////////////////////////////////
-// CalcWeightsPosStock
-//////////////////////////////////////////////////////////////////////
-task CalcWeightsPosStock;
-begin
-  $display("Adding 1 to Weight");
-  
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "D";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = STOCK;
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "1";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "1";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  UART_active = 1;
-  #60
-  
-  UART_active = 0;
-  has_failed = 0;
-  #2
-  $display("TRANSMIT BYTE1: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE2: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE3: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE4: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE5: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE6: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE7: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE8: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE9: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE10: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  if(has_failed == 0)
-    $display("################################################ Add Weight Passed ######################################");
-  else
-    $display("################################################ Add Weight Failed ######################################");
-  
-    $display(" ");
-
-
-end
-endtask
-
-//////////////////////////////////////////////////////////////////////
-// CalcWeightsNegStock
-//////////////////////////////////////////////////////////////////////
-task CalcWeightsNegStock;
-begin
-  $display("Subtracting 1 from Weight");
-  
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "E";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = STOCK;
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "1";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "1";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-
-  data_received_from_UART_is_valid = 1;
-  data_received_from_UART = "0";
-  #2
-  data_received_from_UART_is_valid = 0;
-  #6
-  UART_active = 1;
-  #60
-  
-  UART_active = 0;
-  has_failed = 0;
-  #2
-  $display("TRANSMIT BYTE1: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE2: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE3: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE4: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE5: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE6: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE7: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE8: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE9: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  UART_active = 0;
-  #2
-  $display("TRANSMIT BYTE10: %s", transmit_byte);
-  if(transmit_byte != "C")
-    has_failed = 1;
-  UART_active = 1;
-  #6
-  
-  if(has_failed == 0)
-    $display("################################################ Remove Weight Passed ######################################");
-  else
-    $display("################################################ Remove Weight Failed ######################################");
-  
-    $display(" ");
-
-
-end
-endtask
 endmodule

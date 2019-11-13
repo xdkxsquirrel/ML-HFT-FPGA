@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Nov 12 14:52:53 2019
-| Host             : Donovan running 64-bit major release  (build 9200)
+| Date             : Wed Nov 13 14:21:35 2019
+| Host             : Bidlack running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7s25csga225-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.062        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.000        |
+| Dynamic (W)              | 0.001        |
 | Device Static (W)        | 0.061        |
 | Effective TJA (C/W)      | 3.7          |
 | Max Ambient (C)          | 84.8         |
@@ -53,12 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1188 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      721 |     14600 |            4.94 |
-|   CARRY4       |    <0.001 |       99 |      3650 |            2.71 |
-|   Register     |    <0.001 |      193 |     29200 |            0.66 |
-|   Others       |     0.000 |       20 |       --- |             --- |
-| Signals        |    <0.001 |      943 |       --- |             --- |
+| Slice Logic    |    <0.001 |    11304 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     7448 |     14600 |           51.01 |
+|   CARRY4       |    <0.001 |      959 |      3650 |           26.27 |
+|   Register     |    <0.001 |     1280 |     29200 |            4.38 |
+|   F7/F8 Muxes  |    <0.001 |        6 |     14600 |            0.04 |
+|   Others       |     0.000 |       38 |       --- |             --- |
+| Signals        |    <0.001 |     9467 |       --- |             --- |
 | I/O            |    <0.001 |        6 |       150 |            4.00 |
 | Static Power   |     0.061 |          |           |                 |
 | Total          |     0.062 |          |           |                 |
@@ -71,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.005 |       0.000 |      0.005 |
+| Vccint    |       1.000 |     0.005 |       0.001 |      0.005 |
 | Vccaux    |       1.800 |     0.009 |       0.000 |      0.009 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
