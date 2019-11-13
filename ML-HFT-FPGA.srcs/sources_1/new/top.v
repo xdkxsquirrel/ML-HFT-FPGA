@@ -19,8 +19,7 @@ module top(
 	output     led0_r,
 	output     led0_g,
 	output     led0_b,
-	output reg [3:0] led,
-	output reg pio47
+	output     pio47
 );
 
 parameter TSLA                              = 0;
@@ -68,9 +67,12 @@ wire [39:0] data_from_AMZN;
 
 wire [39:0] output_to_hex_to_ascii;
 wire mux_data_ready;
+wire [79:0] unserialized_data;
+wire unserialized_data_valid;
+wire serializer_active;
+wire serialized_data_ready;
+wire UART_active;
 wire [7:0] transmit_byte;
-wire transmit_data_valid;
-wire active;
 wire transmit_done;
 
 UART_RX rx(clk, pio48, data_received_from_UART_is_valid, data_received_from_UART);
@@ -89,11 +91,12 @@ stock_weight JPM_weight(clk, data_ready_for_weights, stock_selected[JPM], data_f
 stock_weight IBM_weight(clk, data_ready_for_weights, stock_selected[IBM], data_for_stock, data_ready_from_IBM, data_from_IBM);
 stock_weight AMZN_weight(clk, data_ready_for_weights, stock_selected[AMZN], data_for_stock, data_ready_from_AMZN, data_from_AMZN);
 
-mux11to1 MUX(data_ready_from_TSLA, data_ready_from_AAPL, data_ready_from_WMT, data_ready_from_JNJ, data_ready_from_GOOG, data_ready_from_XOM, data_ready_from_MSFT, 
+mux11to1 MUX(clk, data_ready_from_TSLA, data_ready_from_AAPL, data_ready_from_WMT, data_ready_from_JNJ, data_ready_from_GOOG, data_ready_from_XOM, data_ready_from_MSFT, 
         data_ready_from_GE, data_ready_from_JPM, data_ready_from_IBM, data_ready_from_AMZN, data_from_TSLA, data_from_AAPL, data_from_WMT, data_from_JNJ, data_from_GOOG, data_from_XOM,
         data_from_MSFT, data_from_GE, data_from_JPM, data_from_IBM, data_from_AMZN, stock_selected, output_to_hex_to_ascii, mux_data_ready);
 
-convert_to_ASCII convert_to(clk, active, mux_data_ready, output_to_hex_to_ascii, transmit_data_valid, transmit_byte);
-UART_TX tx(clk, transmit_data_valid, transmit_byte, active, pio47, transmit_done);
+convert_to_ASCII convert_to(clk, serializer_active, mux_data_ready, output_to_hex_to_ascii, unserialized_data_valid, unserialized_data);
+parallel_to_serial_buffer serializer(clk, UART_active, unserialized_data_valid, unserialized_data, serialized_data_ready, serializer_active, transmit_byte);
+UART_TX tx(clk, serialized_data_ready, transmit_byte, UART_active, pio47, transmit_done);
 
 endmodule

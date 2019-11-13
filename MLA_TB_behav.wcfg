@@ -11,74 +11,132 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="32583333fs"></ZoomStartTime>
-      <ZoomEndTime time="100283334fs"></ZoomEndTime>
-      <Cursor1Time time="89000000fs"></Cursor1Time>
+      <ZoomStartTime time="864448200fs"></ZoomStartTime>
+      <ZoomEndTime time="1115948201fs"></ZoomEndTime>
+      <Cursor1Time time="950848000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+      <NameColumnWidth column_width="301"></NameColumnWidth>
+      <ValueColumnWidth column_width="291"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/MLA_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/data_valid" type="logic">
-      <obj_property name="ElementShortName">data_valid</obj_property>
-      <obj_property name="ObjectShortName">data_valid</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLA_TB/transmitted_byte" type="array">
-      <obj_property name="ElementShortName">transmitted_byte[7:0]</obj_property>
-      <obj_property name="ObjectShortName">transmitted_byte[7:0]</obj_property>
-      <obj_property name="Radix">ASCIIRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLA_TB/ready" type="logic">
-      <obj_property name="ElementShortName">ready</obj_property>
-      <obj_property name="ObjectShortName">ready</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MLA_TB/out" type="array">
+   <wvobject fp_name="/MLA_TB/convert_from/out" type="array">
       <obj_property name="ElementShortName">out[7:0]</obj_property>
       <obj_property name="ObjectShortName">out[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/ready_from_MLA" type="logic">
-      <obj_property name="ElementShortName">ready_from_MLA</obj_property>
-      <obj_property name="ObjectShortName">ready_from_MLA</obj_property>
+   <wvobject fp_name="/MLA_TB/mla/out" type="array">
+      <obj_property name="ElementShortName">out[47:0]</obj_property>
+      <obj_property name="ObjectShortName">out[47:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/out_from_MLA" type="array">
-      <obj_property name="ElementShortName">out_from_MLA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">out_from_MLA[7:0]</obj_property>
+   <wvobject fp_name="/MLA_TB/mla/stock" type="array">
+      <obj_property name="ElementShortName">stock[10:0]</obj_property>
+      <obj_property name="ObjectShortName">stock[10:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/led4_r" type="logic">
-      <obj_property name="ElementShortName">led4_r</obj_property>
-      <obj_property name="ObjectShortName">led4_r</obj_property>
+   <wvobject type="divider" fp_name="divider269">
+      <obj_property name="label">Stock_Weight</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/led4_g" type="logic">
-      <obj_property name="ElementShortName">led4_g</obj_property>
-      <obj_property name="ObjectShortName">led4_g</obj_property>
+   <wvobject fp_name="/MLA_TB/TSLA_weight/stock_weight" type="array">
+      <obj_property name="ElementShortName">stock_weight[39:0]</obj_property>
+      <obj_property name="ObjectShortName">stock_weight[39:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/led4_b" type="logic">
-      <obj_property name="ElementShortName">led4_b</obj_property>
-      <obj_property name="ObjectShortName">led4_b</obj_property>
+   <wvobject fp_name="/MLA_TB/TSLA_weight/data" type="array">
+      <obj_property name="ElementShortName">data[47:0]</obj_property>
+      <obj_property name="ObjectShortName">data[47:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/uut2/state" type="array">
-      <obj_property name="ElementShortName">state[7:0]</obj_property>
-      <obj_property name="ObjectShortName">state[7:0]</obj_property>
+   <wvobject fp_name="/MLA_TB/TSLA_weight/out" type="array">
+      <obj_property name="ElementShortName">out[39:0]</obj_property>
+      <obj_property name="ObjectShortName">out[39:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/uut2/cmd_state" type="array">
-      <obj_property name="ElementShortName">cmd_state[7:0]</obj_property>
-      <obj_property name="ObjectShortName">cmd_state[7:0]</obj_property>
+   <wvobject type="divider" fp_name="divider271">
+      <obj_property name="label">MUX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/uut2/stock_state" type="array">
-      <obj_property name="ElementShortName">stock_state[7:0]</obj_property>
-      <obj_property name="ObjectShortName">stock_state[7:0]</obj_property>
+   <wvobject fp_name="/MLA_TB/MUX/out" type="array">
+      <obj_property name="ElementShortName">out[39:0]</obj_property>
+      <obj_property name="ObjectShortName">out[39:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/uut2/data_state" type="array">
-      <obj_property name="ElementShortName">data_state[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data_state[7:0]</obj_property>
+   <wvobject type="divider" fp_name="divider111">
+      <obj_property name="label">Convert to ASCII</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
    </wvobject>
-   <wvobject fp_name="/MLA_TB/uut2/tsla_weight" type="array">
-      <obj_property name="ElementShortName">tsla_weight[39:0]</obj_property>
-      <obj_property name="ObjectShortName">tsla_weight[39:0]</obj_property>
+   <wvobject fp_name="/MLA_TB/convert_to/data" type="array">
+      <obj_property name="ElementShortName">data[39:0]</obj_property>
+      <obj_property name="ObjectShortName">data[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/convert_to/data_to_send" type="array">
+      <obj_property name="ElementShortName">data_to_send[79:0]</obj_property>
+      <obj_property name="ObjectShortName">data_to_send[79:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/convert_to/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/convert_to/active" type="logic">
+      <obj_property name="ElementShortName">active</obj_property>
+      <obj_property name="ObjectShortName">active</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider112">
+      <obj_property name="label">Serializer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/data" type="array">
+      <obj_property name="ElementShortName">data[79:0]</obj_property>
+      <obj_property name="ObjectShortName">data[79:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/uart_active" type="logic">
+      <obj_property name="ElementShortName">uart_active</obj_property>
+      <obj_property name="ObjectShortName">uart_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/data_valid" type="logic">
+      <obj_property name="ElementShortName">data_valid</obj_property>
+      <obj_property name="ObjectShortName">data_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/data_to_send" type="array">
+      <obj_property name="ElementShortName">data_to_send[79:0]</obj_property>
+      <obj_property name="ObjectShortName">data_to_send[79:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/current_byte_to_send" type="array">
+      <obj_property name="ElementShortName">current_byte_to_send[7:0]</obj_property>
+      <obj_property name="ObjectShortName">current_byte_to_send[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/serializer/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider113">
+      <obj_property name="label">Output for UART</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MLA_TB/transmit_byte" type="array">
+      <obj_property name="ElementShortName">transmit_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">transmit_byte[7:0]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
 </wave_config>

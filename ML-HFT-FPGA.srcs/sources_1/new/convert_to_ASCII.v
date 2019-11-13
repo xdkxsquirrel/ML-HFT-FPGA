@@ -12,40 +12,57 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module convert_to_ASCII(
-  input        clk,
-  input        active,
-  input        data_valid,
-  input  [39:0] data, 
-  output reg      ready,
-  output reg [7:0] current_byte_to_send     
+  input             clk,
+  input             active,
+  input             data_valid,
+  input  [39:0]     data, 
+  output reg        ready,
+  output reg [79:0] data_to_send     
 );
   
 parameter IDLE                  = 0;  
-parameter FIRST                 = 1;
-parameter SECOND                = 2;
-parameter THIRD                 = 3;
-parameter FOURTH                = 4;
-parameter FIFTH                 = 5;
-parameter SIXTH                 = 6;
-parameter SEVENTH               = 7;
-parameter EIGHTH                = 8;
-parameter NINTH                 = 9;
-parameter TENTH                 = 10;
+parameter CONVERT               = 1;
 
-parameter COMPANY_START_LOCATION            =  0;
-parameter COMPANY_END_LOCATION              =  7;
-parameter FOUR_START_LOCATION               =  8;
-parameter FOUR_END_LOCATION                 = 15;
-parameter PROFIT_START_LOCATION             = 16;
-parameter PROFIT_END_LOCATION               = 23;
-parameter TWITTER_START_LOCATION            = 24;
-parameter TWITTER_END_LOCATION              = 31;
-parameter MOVING_START_LOCATION             = 32;
-parameter MOVING_END_LOCATION               = 39;
+parameter COMPANY_HEX_LOCATION              =  0;
+parameter FOUR_HEX_LOCATION                 =  8;
+parameter PROFIT_HEX_LOCATION               = 16;
+parameter TWITTER_HEX_LOCATION              = 24;
+parameter MOVING_HEX_LOCATION               = 32;
 
-reg [3:0] state                 = 0;
-reg [39:0] data_to_send         = 0;
-     
+parameter COMPANY_BYTE_LOCATION             =  0;
+parameter FOUR_BYTE_LOCATION                = 16;
+parameter PROFIT_BYTE_LOCATION              = 32;
+parameter TWITTER_BYTE_LOCATION             = 48;
+parameter MOVING_BYTE_LOCATION              = 64;
+
+reg        state                = 0;
+reg [39:0] temp_data            = 0;
+reg [3:0]  hex                  = 0;
+
+    function [7:0] convert_from_hex;
+        input [3:0] hex;
+        begin
+        case (hex)
+            4'h0: convert_from_hex = "0"; 
+            4'h1: convert_from_hex = "1";
+            4'h2: convert_from_hex = "2";
+            4'h3: convert_from_hex = "3";
+            4'h4: convert_from_hex = "4";
+            4'h5: convert_from_hex = "5";
+            4'h6: convert_from_hex = "6";
+            4'h7: convert_from_hex = "7";
+            4'h8: convert_from_hex = "8";
+            4'h9: convert_from_hex = "9";
+            4'hA: convert_from_hex = "A";
+            4'hB: convert_from_hex = "B";
+            4'hC: convert_from_hex = "C";
+            4'hD: convert_from_hex = "D";
+            4'hE: convert_from_hex = "E";
+            4'hF: convert_from_hex = "F";
+         endcase
+         end
+      endfunction        
+ 
 always @(posedge clk)
   begin
   case (state)
@@ -53,309 +70,44 @@ always @(posedge clk)
       begin
       if(data_valid == 1)
         begin
-        data_to_send <= data;
-        state <= FIRST;
+        state <= CONVERT;
         ready <= 0;
         end
       else
         begin
-        data_to_send <= 0;
         state <= IDLE;
         ready <= 0;
         end
       end
       
-    FIRST:
+    CONVERT:
       begin
       if(active == 0)
         begin
-        current_byte_to_send <= data_to_send[COMPANY_END_LOCATION-4:COMPANY_START_LOCATION];
-        state <= SECOND;
+        data_to_send[COMPANY_BYTE_LOCATION+7:COMPANY_BYTE_LOCATION] <= convert_from_hex(data[COMPANY_HEX_LOCATION+7:COMPANY_HEX_LOCATION+4]);
+        data_to_send[COMPANY_BYTE_LOCATION+15:COMPANY_BYTE_LOCATION+8] <= convert_from_hex(data[COMPANY_HEX_LOCATION+3:COMPANY_HEX_LOCATION]);
+        
+        data_to_send[FOUR_BYTE_LOCATION+7:FOUR_BYTE_LOCATION] <= convert_from_hex(data[FOUR_HEX_LOCATION+7:FOUR_HEX_LOCATION+4]);
+        data_to_send[FOUR_BYTE_LOCATION+15:FOUR_BYTE_LOCATION+8] <= convert_from_hex(data[FOUR_HEX_LOCATION+3:FOUR_HEX_LOCATION]);
+        
+        data_to_send[PROFIT_BYTE_LOCATION+7:PROFIT_BYTE_LOCATION] <= convert_from_hex(data[PROFIT_HEX_LOCATION+7:PROFIT_HEX_LOCATION+4]);
+        data_to_send[PROFIT_BYTE_LOCATION+15:PROFIT_BYTE_LOCATION+8] <= convert_from_hex(data[PROFIT_HEX_LOCATION+3:PROFIT_HEX_LOCATION]);
+        
+        data_to_send[TWITTER_BYTE_LOCATION+7:TWITTER_BYTE_LOCATION] <= convert_from_hex(data[TWITTER_HEX_LOCATION+7:TWITTER_HEX_LOCATION+4]);
+        data_to_send[TWITTER_BYTE_LOCATION+15:TWITTER_BYTE_LOCATION+8] <= convert_from_hex(data[TWITTER_HEX_LOCATION+3:TWITTER_HEX_LOCATION]);
+        
+        data_to_send[MOVING_BYTE_LOCATION+7:MOVING_BYTE_LOCATION] <= convert_from_hex(data[MOVING_HEX_LOCATION+7:MOVING_HEX_LOCATION+4]);
+        data_to_send[MOVING_BYTE_LOCATION+15:MOVING_BYTE_LOCATION+8] <= convert_from_hex(data[MOVING_HEX_LOCATION+3:MOVING_HEX_LOCATION]);
+        state <= IDLE;
         ready <= 1;
         end
       else
         begin
-        current_byte_to_send <= data_to_send[COMPANY_END_LOCATION-4:COMPANY_START_LOCATION];
-        state <= FIRST;
+        data_to_send <= 0;
+        state <= CONVERT;
         ready <= 0;
         end
       end
-      
-        
-        
-        
-      ready_reg                 <= 0;
-      output_reg                <= output_reg;           
-      if (data_valid == 1'b1)
-        begin
-        case(transmitted_byte)
-          "0":
-            begin
-            MSB_hex_value <= 8'h00;
-            end
-
-          "1":
-            begin
-            MSB_hex_value <= 8'h10;
-            end
-
-          "2":
-            begin
-            MSB_hex_value <= 8'h20;
-            end
-
-          "3":
-            begin
-            MSB_hex_value <= 8'h30;
-            end
-
-          "4":
-            begin
-            MSB_hex_value <= 8'h40;
-            end
-
-          "5":
-            begin
-            MSB_hex_value <= 8'h50;
-            end
-
-          "6":
-            begin
-            MSB_hex_value <= 8'h60;
-            end
-
-          "7":
-            begin
-            MSB_hex_value <= 8'h70;
-            end
-
-          "8":
-            begin
-            MSB_hex_value <= 8'h80;
-            end
-
-          "9":
-            begin
-            MSB_hex_value <= 8'h90;
-            end
-
-          "A":
-            begin
-            MSB_hex_value <= 8'hA0;
-            end
-
-          "B":
-            begin
-            MSB_hex_value <= 8'hB0;
-            end
-
-          "C":
-            begin
-            MSB_hex_value <= 8'hC0;
-            end
-
-          "D":
-            begin
-            MSB_hex_value <= 8'hD0;
-            end
-
-          "E":
-            begin
-            MSB_hex_value <= 8'hE0;
-            end
-
-          "F":
-            begin
-            MSB_hex_value <= 8'hF0;
-            end
-            
-          "a":
-            begin
-            MSB_hex_value <= 8'hA0;
-            end
-
-          "b":
-            begin
-            MSB_hex_value <= 8'hB0;
-            end
-
-          "c":
-            begin
-            MSB_hex_value <= 8'hC0;
-            end
-
-          "d":
-            begin
-            MSB_hex_value <= 8'hD0;
-            end
-
-          "e":
-            begin
-            MSB_hex_value <= 8'hE0;
-            end
-
-          "f":
-            begin
-            MSB_hex_value <= 8'hF0;
-            end
-
-          default:
-            begin
-            MSB_hex_value <= 8'h00;
-            end
-        endcase
-        state                  <= SECOND;
-        end           
-
-      else
-        begin
-        state                  <= FIRST;
-        end
-      end 
-        
-    SECOND :
-      begin
-      output_reg                <= output_reg;  
-      ready_reg                 <= 0;           
-      if (data_valid == 1'b1)
-        begin
-        case(transmitted_byte)
-          "0":
-            begin
-            LSB_hex_value <= 8'h00;
-            end
-
-          "1":
-            begin
-            LSB_hex_value <= 8'h01;
-            end
-
-          "2":
-            begin
-            LSB_hex_value <= 8'h02;
-            end
-
-          "3":
-            begin
-            LSB_hex_value <= 8'h03;
-            end
-
-          "4":
-            begin
-            LSB_hex_value <= 8'h04;
-            end
-
-          "5":
-            begin
-            LSB_hex_value <= 8'h05;
-            end
-
-          "6":
-            begin
-            LSB_hex_value <= 8'h06;
-            end
-
-          "7":
-            begin
-            LSB_hex_value <= 8'h07;
-            end
-
-          "8":
-            begin
-            LSB_hex_value <= 8'h08;
-            end
-
-          "9":
-            begin
-            LSB_hex_value <= 8'h09;
-            end
-
-          "A":
-            begin
-            LSB_hex_value <= 8'h0A;
-            end
-
-          "B":
-            begin
-            LSB_hex_value <= 8'h0B;
-            end
-
-          "C":
-            begin
-            LSB_hex_value <= 8'h0C;
-            end
-
-          "D":
-            begin
-            LSB_hex_value <= 8'h0D;
-            end
-
-          "E":
-            begin
-            LSB_hex_value <= 8'h0E;
-            end
-
-          "F":
-            begin
-            LSB_hex_value <= 8'h0F;
-            end
-            
-          "a":
-            begin
-            LSB_hex_value <= 8'h0A;
-            end
-
-          "b":
-            begin
-            LSB_hex_value <= 8'h0B;
-            end
-
-          "c":
-            begin
-            LSB_hex_value <= 8'h0C;
-            end
-
-          "d":
-            begin
-            LSB_hex_value <= 8'h0D;
-            end
-
-          "e":
-            begin
-            LSB_hex_value <= 8'h0E;
-            end
-
-          "f":
-            begin
-            LSB_hex_value <= 8'h0F;
-            end
-
-          default:
-            begin
-            LSB_hex_value <= 8'h00;
-            end
-        endcase
-        state                  <= CALCULATE;
-        end 
-      else
-        begin
-        state                  <= SECOND;
-        end
-      end
-
-    CALCULATE :
-      begin
-      output_reg                <= MSB_hex_value | LSB_hex_value; 
-      ready_reg                 <= 1; 
-      state                     <= FIRST;
-      end
-         
-    default :
-      state                     <= FIRST;   
-    endcase
-end
-
-assign ready                    = ready_reg;
-assign out                      = output_reg;
-   
+   endcase
+   end
 endmodule

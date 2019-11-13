@@ -2,12 +2,12 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov 11 15:42:02 2019
-# Process ID: 268
-# Current directory: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
+# Start of session at: Tue Nov 12 14:50:45 2019
+# Process ID: 4948
+# Current directory: C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
-# Journal file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1\vivado.jou
+# Log file: C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
+# Journal file: C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: synth_design -top top -part xc7s25csga225-1
@@ -16,36 +16,47 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Device 21-403] Loading part xc7s25csga225-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16236 
+INFO: Helper process launched with PID 1496 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 811.859 ; gain = 175.602
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 808.250 ; gain = 177.152
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
-INFO: [Synth 8-6157] synthesizing module 'UART_RX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
+	Parameter TSLA bound to: 0 - type: integer 
+	Parameter AAPL bound to: 1 - type: integer 
+	Parameter WMT bound to: 2 - type: integer 
+	Parameter JNJ bound to: 3 - type: integer 
+	Parameter GOOG bound to: 4 - type: integer 
+	Parameter XOM bound to: 5 - type: integer 
+	Parameter MSFT bound to: 6 - type: integer 
+	Parameter GE bound to: 7 - type: integer 
+	Parameter JPM bound to: 8 - type: integer 
+	Parameter IBM bound to: 9 - type: integer 
+	Parameter AMZN bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'UART_RX' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
 	Parameter CLKS_PER_UART_CYCLE bound to: 104 - type: integer 
 	Parameter IDLE_STATE bound to: 3'b000 
 	Parameter START_BIT_STATE bound to: 3'b001 
 	Parameter DATA_BITS_STATE bound to: 3'b010 
 	Parameter STOP_BIT_STATE bound to: 3'b011 
 	Parameter CLEANUP_STATE bound to: 3'b100 
-INFO: [Synth 8-6155] done synthesizing module 'UART_RX' (1#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
-INFO: [Synth 8-6157] synthesizing module 'convert_from_ASCII' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'UART_RX' (1#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_RX.v:17]
+INFO: [Synth 8-6157] synthesizing module 'convert_from_ASCII' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v:14]
 	Parameter FIRST bound to: 2'b00 
 	Parameter SECOND bound to: 2'b01 
 	Parameter CALCULATE bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'convert_from_ASCII' (2#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v:14]
-INFO: [Synth 8-6157] synthesizing module 'MLA' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
-	Parameter TSLA bound to: 1'b0 
-	Parameter AAPL bound to: 1'b1 
-	Parameter WMT bound to: 1'b0 
-	Parameter JNJ bound to: 1'b1 
-	Parameter GOOG bound to: 1'b0 
-	Parameter XOM bound to: 1'b1 
-	Parameter MSFT bound to: 1'b0 
-	Parameter GE bound to: 1'b1 
-	Parameter JPM bound to: 1'b0 
-	Parameter IBM bound to: 1'b1 
-	Parameter AMZN bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'convert_from_ASCII' (2#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_from_ASCII.v:14]
+INFO: [Synth 8-6157] synthesizing module 'MLA' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
+	Parameter TSLA bound to: 4'b0000 
+	Parameter AAPL bound to: 4'b0001 
+	Parameter WMT bound to: 4'b0010 
+	Parameter JNJ bound to: 4'b0011 
+	Parameter GOOG bound to: 4'b0100 
+	Parameter XOM bound to: 4'b0101 
+	Parameter MSFT bound to: 4'b0110 
+	Parameter GE bound to: 4'b0111 
+	Parameter JPM bound to: 4'b1000 
+	Parameter IBM bound to: 4'b1001 
+	Parameter AMZN bound to: 4'b1010 
 	Parameter SET_STOCK_AND_CMD_STATE bound to: 0 - type: integer 
 	Parameter DATA_ONE_STATE bound to: 1 - type: integer 
 	Parameter DATA_TWO_STATE bound to: 2 - type: integer 
@@ -64,26 +75,837 @@ INFO: [Synth 8-6157] synthesizing module 'MLA' [C:/Users/BidlackD/Documents/Git/
 	Parameter MOVING_END_LOCATION bound to: 39 - type: integer 
 	Parameter CMD_START_LOCATION bound to: 40 - type: integer 
 	Parameter CMD_END_LOCATION bound to: 47 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'MLA' (3#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
-WARNING: [Synth 8-689] width (8) of port connection 'stock' does not match port width (4) of module 'MLA' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:37]
-WARNING: [Synth 8-689] width (1) of port connection 'out' does not match port width (48) of module 'MLA' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:37]
-ERROR: [Synth 8-349] instance 'mla' of module 'MLA' passed 8 connections, but takes just 6 [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:37]
-ERROR: [Synth 8-349] instance 'mla' of module 'MLA' passed 8 connections, but takes just 6 [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:37]
-INFO: [Synth 8-6157] synthesizing module 'UART_TX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'MLA' (3#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/MLA.v:15]
+INFO: [Synth 8-6157] synthesizing module 'stock_weight' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/stock_weight.v:16]
+	Parameter SET_WEIGHTS_CMD bound to: 4'b1010 
+	Parameter GET_WEIGHTS_CMD bound to: 4'b1011 
+	Parameter CALC_BUY_CMD bound to: 4'b1100 
+	Parameter CALC_WEIGHTS_POS_CMD bound to: 4'b1101 
+	Parameter CALC_WEIGHTS_NEG_CMD bound to: 4'b1110 
+	Parameter COMPANY_START_LOCATION bound to: 0 - type: integer 
+	Parameter COMPANY_END_LOCATION bound to: 7 - type: integer 
+	Parameter FOUR_START_LOCATION bound to: 8 - type: integer 
+	Parameter FOUR_END_LOCATION bound to: 15 - type: integer 
+	Parameter PROFIT_START_LOCATION bound to: 16 - type: integer 
+	Parameter PROFIT_END_LOCATION bound to: 23 - type: integer 
+	Parameter TWITTER_START_LOCATION bound to: 24 - type: integer 
+	Parameter TWITTER_END_LOCATION bound to: 31 - type: integer 
+	Parameter MOVING_START_LOCATION bound to: 32 - type: integer 
+	Parameter MOVING_END_LOCATION bound to: 39 - type: integer 
+	Parameter CMD_START_LOCATION bound to: 40 - type: integer 
+	Parameter CMD_END_LOCATION bound to: 47 - type: integer 
+	Parameter EXECUTION_CONFIRMATION bound to: 40'b1100110011001100110011001100110011001100 
+	Parameter EXECUTE_BUY bound to: 40'b0001000100010001000100010001000100010001 
+	Parameter EXECUTE_SELL bound to: 40'b0010001000100010001000100010001000100010 
+INFO: [Synth 8-6155] done synthesizing module 'stock_weight' (4#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/stock_weight.v:16]
+INFO: [Synth 8-6157] synthesizing module 'mux11to1' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/mux11to1.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mux11to1' (5#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/mux11to1.v:14]
+WARNING: [Synth 8-689] width (40) of port connection 'data_k_ready' does not match port width (1) of module 'mux11to1' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:95]
+WARNING: [Synth 8-689] width (40) of port connection 'sel' does not match port width (11) of module 'mux11to1' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:96]
+WARNING: [Synth 8-689] width (1) of port connection 'out' does not match port width (40) of module 'mux11to1' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:96]
+WARNING: [Synth 8-7023] instance 'MUX' of module 'mux11to1' has 26 connections declared, but only 25 given [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:94]
+INFO: [Synth 8-6157] synthesizing module 'convert_to_ASCII' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:14]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter CONVERT bound to: 1 - type: integer 
+	Parameter COMPANY_HEX_LOCATION bound to: 0 - type: integer 
+	Parameter FOUR_HEX_LOCATION bound to: 8 - type: integer 
+	Parameter PROFIT_HEX_LOCATION bound to: 16 - type: integer 
+	Parameter TWITTER_HEX_LOCATION bound to: 24 - type: integer 
+	Parameter MOVING_HEX_LOCATION bound to: 32 - type: integer 
+	Parameter COMPANY_BYTE_LOCATION bound to: 0 - type: integer 
+	Parameter FOUR_BYTE_LOCATION bound to: 16 - type: integer 
+	Parameter PROFIT_BYTE_LOCATION bound to: 32 - type: integer 
+	Parameter TWITTER_BYTE_LOCATION bound to: 48 - type: integer 
+	Parameter MOVING_BYTE_LOCATION bound to: 64 - type: integer 
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+WARNING: [Synth 8-151] case item 4'b0100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:50]
+WARNING: [Synth 8-151] case item 4'b0101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:51]
+WARNING: [Synth 8-151] case item 4'b0110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:52]
+WARNING: [Synth 8-151] case item 4'b0111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:53]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:54]
+WARNING: [Synth 8-151] case item 4'b1001 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:55]
+WARNING: [Synth 8-151] case item 4'b1010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:56]
+WARNING: [Synth 8-151] case item 4'b1011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:57]
+WARNING: [Synth 8-151] case item 4'b1100 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:58]
+WARNING: [Synth 8-151] case item 4'b1101 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:59]
+WARNING: [Synth 8-151] case item 4'b1110 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:60]
+WARNING: [Synth 8-151] case item 4'b1111 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:61]
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:48]
+WARNING: [Synth 8-151] case item 4'b0011 is unreachable [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:49]
+INFO: [Common 17-14] Message 'Synth 8-151' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'convert_to_ASCII' (6#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:14]
+INFO: [Synth 8-6157] synthesizing module 'parallel_to_serial_buffer' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:15]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter SEND_BYTE bound to: 1 - type: integer 
+	Parameter NUMBER_OF_BYTES_TO_SEND bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'parallel_to_serial_buffer' (7#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:15]
+INFO: [Synth 8-6157] synthesizing module 'UART_TX' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
 	Parameter CLKS_PER_UART_CYCLE bound to: 104 - type: integer 
 	Parameter IDLE_STATE bound to: 3'b000 
 	Parameter START_BIT_STATE bound to: 3'b001 
 	Parameter DATA_BITS_STATE bound to: 3'b010 
 	Parameter STOP_BIT_STATE bound to: 3'b011 
 	Parameter CLEANUP_STATE bound to: 3'b100 
-ERROR: [Synth 8-6156] failed synthesizing module 'UART_TX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
-ERROR: [Synth 8-6156] failed synthesizing module 'top' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'UART_TX' (8#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
+WARNING: [Synth 8-3848] Net led0_r in module/entity top does not have driver. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:19]
+WARNING: [Synth 8-3848] Net led0_g in module/entity top does not have driver. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:20]
+WARNING: [Synth 8-3848] Net led0_b in module/entity top does not have driver. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:21]
+WARNING: [Synth 8-3848] Net output_to_hex_to_ascii in module/entity top does not have driver. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'top' (9#1) [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[79]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[78]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[77]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[76]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[75]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[74]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[73]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[72]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[71]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[70]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[69]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[68]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[67]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[66]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[65]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[64]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[63]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[62]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[61]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[60]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[59]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[58]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[57]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[56]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[55]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[54]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[53]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[52]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[51]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[50]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[49]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[48]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[47]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[46]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[45]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[44]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[43]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[42]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[41]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[40]
+WARNING: [Synth 8-3331] design top has unconnected port led0_r
+WARNING: [Synth 8-3331] design top has unconnected port led0_g
+WARNING: [Synth 8-3331] design top has unconnected port led0_b
+WARNING: [Synth 8-3331] design top has unconnected port btn[1]
+WARNING: [Synth 8-3331] design top has unconnected port btn[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 876.227 ; gain = 239.969
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 872.688 ; gain = 241.590
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 872.688 ; gain = 241.590
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 872.688 ; gain = 241.590
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'data_valid_register'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'pio48_IBUF'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'rx_n_1'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'rx_n_2'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'rx_n_3'. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/constrs_1/new/CMOD-S7-25-OOB.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1005.391 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1005.391 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s25csga225-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'convert_from_ASCII'
+INFO: [Synth 8-5546] ROM "MSB_hex_value" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "LSB_hex_value" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MLA'
+INFO: [Synth 8-5546] ROM "out" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_TX'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   FIRST |                              001 |                               00
+                  SECOND |                              010 |                               01
+               CALCULATE |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'convert_from_ASCII'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+ SET_STOCK_AND_CMD_STATE |                           000001 |                         00000000
+          DATA_ONE_STATE |                           000010 |                         00000001
+          DATA_TWO_STATE |                           000100 |                         00000010
+        DATA_THREE_STATE |                           001000 |                         00000011
+         DATA_FOUR_STATE |                           010000 |                         00000100
+         DATA_FIVE_STATE |                           100000 |                         00000101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MLA'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              IDLE_STATE |                              000 |                              000
+         START_BIT_STATE |                              001 |                              001
+         DATA_BITS_STATE |                              010 |                              010
+          STOP_BIT_STATE |                              011 |                              011
+           CLEANUP_STATE |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'UART_TX'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   7 Input     21 Bit       Adders := 11    
+	   5 Input     11 Bit       Adders := 11    
+	   2 Input      8 Bit       Adders := 56    
+	   3 Input      8 Bit       Adders := 55    
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	               80 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	               40 Bit    Registers := 24    
+	               32 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 7     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 24    
++---Muxes : 
+	   3 Input     80 Bit        Muxes := 1     
+	   2 Input     80 Bit        Muxes := 2     
+	   6 Input     48 Bit        Muxes := 1     
+	   2 Input     48 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 37    
+	   6 Input     40 Bit        Muxes := 33    
+	   2 Input     38 Bit        Muxes := 11    
+	   2 Input     32 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	  23 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	  23 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 10    
+	   3 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 29    
+	   5 Input      1 Bit        Muxes := 10    
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module UART_RX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   6 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module convert_from_ASCII 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  23 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  23 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 3     
+Module MLA 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input     48 Bit        Muxes := 1     
+	   2 Input     48 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+Module stock_weight 
+Detailed RTL Component Info : 
++---Adders : 
+	   7 Input     21 Bit       Adders := 1     
+	   5 Input     11 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 5     
++---Registers : 
+	               40 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	   6 Input     40 Bit        Muxes := 3     
+	   2 Input     38 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+Module mux11to1 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module convert_to_ASCII 
+Detailed RTL Component Info : 
++---Registers : 
+	               80 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   3 Input     80 Bit        Muxes := 1     
+	   2 Input     80 Bit        Muxes := 2     
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module parallel_to_serial_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 14    
+Module UART_TX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 90 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5587] ROM size for "LSB_hex_value" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "MSB_hex_value" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'i_reg[31:0]' into 'i_reg[31:0]' [C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:59]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[79]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[78]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[77]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[76]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[75]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[74]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[73]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[72]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[71]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[70]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[69]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[68]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[67]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[66]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[65]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[64]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[63]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[62]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[61]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[60]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[59]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[58]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[57]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[56]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[55]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[54]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[53]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[52]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[51]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[50]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[49]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[48]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[47]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[46]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[45]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[44]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[43]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[42]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[41]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port data[40]
+WARNING: [Synth 8-3331] design top has unconnected port led0_r
+WARNING: [Synth 8-3331] design top has unconnected port led0_g
+WARNING: [Synth 8-3331] design top has unconnected port led0_b
+WARNING: [Synth 8-3331] design top has unconnected port btn[1]
+WARNING: [Synth 8-3331] design top has unconnected port btn[0]
+INFO: [Synth 8-3886] merging instance 'convert_from/MSB_hex_value_reg[0]' (FDE) to 'convert_from/MSB_hex_value_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_from/MSB_hex_value_reg[1]' (FDE) to 'convert_from/MSB_hex_value_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_from/MSB_hex_value_reg[2]' (FDE) to 'convert_from/MSB_hex_value_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_from/\MSB_hex_value_reg[3] )
+INFO: [Synth 8-3886] merging instance 'mla/out_reg[47]' (FDE) to 'mla/out_reg[46]'
+INFO: [Synth 8-3886] merging instance 'mla/out_reg[46]' (FDE) to 'mla/out_reg[45]'
+INFO: [Synth 8-3886] merging instance 'mla/out_reg[45]' (FDE) to 'mla/out_reg[44]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (mla/\out_reg[44] )
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[31]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[41]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[42]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[43]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[44]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[45]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[46]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[47]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[49]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[50]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[51]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[52]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[53]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[54]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[55]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[57]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[58]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[59]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[60]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[61]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[62]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[63]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[65]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[66]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[67]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[68]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[69]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[70]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[71]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[73]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[74]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[75]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[76]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[77]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[78]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[79]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[15]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[23]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[39]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[7]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[27]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[11]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[19]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[35]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[3]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[29]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[13]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[21]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[37]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[5]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[25]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[9]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[17]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[33]' (FD) to 'convert_to/data_to_send_reg[1]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[1]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[30]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[14]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[22]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[38]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[6]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[26]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[10]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[18]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[34]' (FD) to 'convert_to/data_to_send_reg[2]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[2]' (FD) to 'convert_to/data_to_send_reg[4]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[28]' (FD) to 'convert_to/data_to_send_reg[4]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[12]' (FD) to 'convert_to/data_to_send_reg[4]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[20]' (FD) to 'convert_to/data_to_send_reg[4]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[36]' (FD) to 'convert_to/data_to_send_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[0] )
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[4]' (FD) to 'convert_to/data_to_send_reg[24]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[24]' (FD) to 'convert_to/data_to_send_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[8] )
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[31]' (FDE) to 'serializer/data_to_send_reg[39]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[15]' (FDE) to 'serializer/data_to_send_reg[39]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[23]' (FDE) to 'serializer/data_to_send_reg[39]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[39]' (FDE) to 'serializer/data_to_send_reg[38]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[7]' (FDE) to 'serializer/data_to_send_reg[38]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[30]' (FDE) to 'serializer/data_to_send_reg[38]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[14]' (FDE) to 'serializer/data_to_send_reg[38]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[22]' (FDE) to 'serializer/data_to_send_reg[38]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[38]' (FDE) to 'serializer/data_to_send_reg[37]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[6]' (FDE) to 'serializer/data_to_send_reg[37]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[29]' (FDE) to 'serializer/data_to_send_reg[37]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[13]' (FDE) to 'serializer/data_to_send_reg[37]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[21]' (FDE) to 'serializer/data_to_send_reg[37]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[37]' (FDE) to 'serializer/data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[5]' (FDE) to 'serializer/data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[28]' (FDE) to 'serializer/data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[12]' (FDE) to 'serializer/data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[20]' (FDE) to 'serializer/data_to_send_reg[36]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[36]' (FDE) to 'serializer/data_to_send_reg[35]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[4]' (FDE) to 'serializer/data_to_send_reg[35]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[27]' (FDE) to 'serializer/data_to_send_reg[35]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[11]' (FDE) to 'serializer/data_to_send_reg[35]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[19]' (FDE) to 'serializer/data_to_send_reg[35]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\current_byte_to_send_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tx/\data_register_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\current_byte_to_send_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tx/\data_register_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1005.391 ; gain = 374.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1038.469 ; gain = 407.371
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1038.469 ; gain = 407.371
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    99|
+|3     |LUT1   |     1|
+|4     |LUT2   |   291|
+|5     |LUT3   |    75|
+|6     |LUT4   |   137|
+|7     |LUT5   |    69|
+|8     |LUT6   |   303|
+|9     |FDRE   |   193|
+|10    |IBUF   |     2|
+|11    |OBUF   |     1|
+|12    |OBUFT  |     3|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------+--------------------------+------+
+|      |Instance       |Module                    |Cells |
++------+---------------+--------------------------+------+
+|1     |top            |                          |  1175|
+|2     |  AAPL_weight  |stock_weight              |   616|
+|3     |  MUX          |mux11to1                  |     1|
+|4     |  TSLA_weight  |stock_weight_0            |     1|
+|5     |  convert_from |convert_from_ASCII        |    33|
+|6     |  convert_to   |convert_to_ASCII          |     3|
+|7     |  mla          |MLA                       |   284|
+|8     |  rx           |UART_RX                   |    75|
+|9     |  serializer   |parallel_to_serial_buffer |   116|
+|10    |  tx           |UART_TX                   |    39|
++------+---------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 45 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:37 . Memory (MB): peak = 1043.020 ; gain = 279.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1043.020 ; gain = 411.922
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 99 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1043.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
 INFO: [Common 17-83] Releasing license: Synthesis
-11 Infos, 2 Warnings, 0 Critical Warnings and 5 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 11 15:42:24 2019...
+160 Infos, 207 Warnings, 9 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1043.020 ; gain = 647.121
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1043.020 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/donov/OneDrive/Documents/Git Repo/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 12 14:51:38 2019...

@@ -21,17 +21,17 @@ module MLA(
   output reg [47:0] out
 );
 
-parameter TSLA                              = 4'h0;
-parameter AAPL                              = 4'h1;
-parameter WMT                               = 4'h2;
-parameter JNJ                               = 4'h3;
-parameter GOOG                              = 4'h4;
-parameter XOM                               = 4'h5; 
-parameter MSFT                              = 4'h6; 
-parameter GE                                = 4'h7; 
-parameter JPM                               = 4'h8; 
-parameter IBM                               = 4'h9; 
-parameter AMZN                              = 4'hA; 
+parameter TSLA                              = 4'h1;
+parameter AAPL                              = 4'h2;
+parameter WMT                               = 4'h3;
+parameter JNJ                               = 4'h4;
+parameter GOOG                              = 4'h5;
+parameter XOM                               = 4'h6; 
+parameter MSFT                              = 4'h7; 
+parameter GE                                = 4'h8; 
+parameter JPM                               = 4'h9; 
+parameter IBM                               = 4'hA; 
+parameter AMZN                              = 4'hB; 
 
 parameter SET_STOCK_AND_CMD_STATE           = 0;
 parameter DATA_ONE_STATE                    = 1;
@@ -113,7 +113,7 @@ always @(posedge clk)
                 begin           
                 out[MOVING_END_LOCATION:MOVING_START_LOCATION]  <= received_byte;
                 data_ready                                      <= 1;
-                state                                           <= DATA_ONE_STATE;
+                state                                           <= SET_STOCK_AND_CMD_STATE;
                 end
                 
             default:
