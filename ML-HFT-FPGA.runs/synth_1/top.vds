@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Nov 13 14:17:36 2019
-# Process ID: 19444
+# Start of session at: Thu Nov 14 11:38:42 2019
+# Process ID: 16544
 # Current directory: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Device 21-403] Loading part xc7s25csga225-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14360 
+INFO: Helper process launched with PID 13488 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 813.648 ; gain = 178.082
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 812.648 ; gain = 177.469
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
 	Parameter TSLA bound to: 0 - type: integer 
@@ -116,8 +116,17 @@ INFO: [Synth 8-6157] synthesizing module 'convert_to_ASCII' [C:/Users/BidlackD/D
 INFO: [Synth 8-6155] done synthesizing module 'convert_to_ASCII' (6#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/convert_to_ASCII.v:14]
 INFO: [Synth 8-6157] synthesizing module 'parallel_to_serial_buffer' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:15]
 	Parameter IDLE bound to: 0 - type: integer 
-	Parameter SEND_BYTE bound to: 1 - type: integer 
-	Parameter NUMBER_OF_BYTES_TO_SEND bound to: 10 - type: integer 
+	Parameter FIRST_BYTE bound to: 1 - type: integer 
+	Parameter SECOND_BYTE bound to: 2 - type: integer 
+	Parameter THIRD_BYTE bound to: 3 - type: integer 
+	Parameter FOURTH_BYTE bound to: 4 - type: integer 
+	Parameter FIFTH_BYTE bound to: 5 - type: integer 
+	Parameter SIXTH_BYTE bound to: 6 - type: integer 
+	Parameter SEVENTH_BYTE bound to: 7 - type: integer 
+	Parameter EIGHTH_BYTE bound to: 8 - type: integer 
+	Parameter NINTH_BYTE bound to: 9 - type: integer 
+	Parameter TENTH_BYTE bound to: 10 - type: integer 
+	Parameter WAIT_FOR_UART bound to: 11 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'parallel_to_serial_buffer' (7#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:15]
 INFO: [Synth 8-6157] synthesizing module 'UART_TX' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/UART_TX.v:17]
 	Parameter CLKS_PER_UART_CYCLE bound to: 104 - type: integer 
@@ -131,13 +140,14 @@ WARNING: [Synth 8-3848] Net led0_r in module/entity top does not have driver. [C
 WARNING: [Synth 8-3848] Net led0_g in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:20]
 WARNING: [Synth 8-3848] Net led0_b in module/entity top does not have driver. [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'top' (9#1) [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/top.v:15]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port uart_done
 WARNING: [Synth 8-3331] design top has unconnected port led0_r
 WARNING: [Synth 8-3331] design top has unconnected port led0_g
 WARNING: [Synth 8-3331] design top has unconnected port led0_b
 WARNING: [Synth 8-3331] design top has unconnected port btn[1]
 WARNING: [Synth 8-3331] design top has unconnected port btn[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 877.430 ; gain = 241.863
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 877.223 ; gain = 242.043
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -150,10 +160,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 877.430 ; gain = 241.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 877.223 ; gain = 242.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 877.430 ; gain = 241.863
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 877.223 ; gain = 242.043
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -165,26 +175,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1011.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1007.445 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1011.910 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1007.445 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s25csga225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'convert_from_ASCII'
 INFO: [Synth 8-5546] ROM "MSB_hex_value" won't be mapped to RAM because it is too sparse
@@ -223,7 +233,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'UART_TX'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -236,7 +246,6 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
 	   7 Input     21 Bit       Adders := 11    
 	   5 Input     11 Bit       Adders := 11    
 	   2 Input      8 Bit       Adders := 56    
@@ -247,11 +256,10 @@ Detailed RTL Component Info :
 	               80 Bit    Registers := 2     
 	               48 Bit    Registers := 1     
 	               40 Bit    Registers := 23    
-	               32 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 7     
 	                7 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 3     
 	                1 Bit    Registers := 24    
 +---Muxes : 
@@ -261,22 +269,22 @@ Detailed RTL Component Info :
 	   2 Input     40 Bit        Muxes := 33    
 	   6 Input     40 Bit        Muxes := 33    
 	   2 Input     38 Bit        Muxes := 11    
-	   2 Input     32 Bit        Muxes := 1     
 	   6 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 2     
 	  23 Input      8 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 1     
 	  23 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 12    
 	   2 Input      3 Bit        Muxes := 10    
 	   3 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 13    
-	   2 Input      1 Bit        Muxes := 30    
+	   2 Input      1 Bit        Muxes := 15    
 	   5 Input      1 Bit        Muxes := 10    
 	   3 Input      1 Bit        Muxes := 3     
+	  13 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -355,17 +363,14 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 2     
 Module parallel_to_serial_buffer 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               80 Bit    Registers := 1     
-	               32 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 15    
+	   2 Input      4 Bit        Muxes := 11    
+	  13 Input      1 Bit        Muxes := 6     
 Module UART_TX 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -400,7 +405,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5587] ROM size for "LSB_hex_value" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "MSB_hex_value" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'i_reg[31:0]' into 'i_reg[31:0]' [C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.srcs/sources_1/new/parallel_to_serial_buffer.v:58]
+WARNING: [Synth 8-3331] design parallel_to_serial_buffer has unconnected port uart_done
 WARNING: [Synth 8-3331] design top has unconnected port led0_r
 WARNING: [Synth 8-3331] design top has unconnected port led0_g
 WARNING: [Synth 8-3331] design top has unconnected port led0_b
@@ -414,52 +419,52 @@ INFO: [Synth 8-3886] merging instance 'mla/out_reg[47]' (FDE) to 'mla/out_reg[46
 INFO: [Synth 8-3886] merging instance 'mla/out_reg[46]' (FDE) to 'mla/out_reg[45]'
 INFO: [Synth 8-3886] merging instance 'mla/out_reg[45]' (FDE) to 'mla/out_reg[44]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mla/\out_reg[44] )
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[63]' (FDRE) to 'convert_to/data_to_send_reg[79]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[31]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[55]' (FDRE) to 'convert_to/data_to_send_reg[79]'
 INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[47]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[39]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[31]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[7]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[23]' (FDRE) to 'convert_to/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[15]' (FDRE) to 'convert_to/data_to_send_reg[79]'
 INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[79]' (FDRE) to 'convert_to/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[15]' (FDRE) to 'convert_to/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[55]' (FDRE) to 'convert_to/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[23]' (FDRE) to 'convert_to/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[39]' (FDRE) to 'convert_to/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[71]' (FDRE) to 'convert_to/data_to_send_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[7] )
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[61]' (FDRE) to 'convert_to/data_to_send_reg[60]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[29]' (FDRE) to 'convert_to/data_to_send_reg[28]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[45]' (FDRE) to 'convert_to/data_to_send_reg[44]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[77]' (FDRE) to 'convert_to/data_to_send_reg[76]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[13]' (FDRE) to 'convert_to/data_to_send_reg[12]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[71]' (FDRE) to 'convert_to/data_to_send_reg[63]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (convert_to/\data_to_send_reg[63] )
 INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[53]' (FDRE) to 'convert_to/data_to_send_reg[52]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[21]' (FDRE) to 'convert_to/data_to_send_reg[20]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[45]' (FDRE) to 'convert_to/data_to_send_reg[44]'
 INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[37]' (FDRE) to 'convert_to/data_to_send_reg[36]'
-INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[69]' (FDRE) to 'convert_to/data_to_send_reg[68]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[29]' (FDRE) to 'convert_to/data_to_send_reg[28]'
 INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[5]' (FDRE) to 'convert_to/data_to_send_reg[4]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[63]' (FDE) to 'serializer/data_to_send_reg[79]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[31]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[21]' (FDRE) to 'convert_to/data_to_send_reg[20]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[13]' (FDRE) to 'convert_to/data_to_send_reg[12]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[77]' (FDRE) to 'convert_to/data_to_send_reg[76]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[69]' (FDRE) to 'convert_to/data_to_send_reg[68]'
+INFO: [Synth 8-3886] merging instance 'convert_to/data_to_send_reg[61]' (FDRE) to 'convert_to/data_to_send_reg[60]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[55]' (FDE) to 'serializer/data_to_send_reg[79]'
 INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[47]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[39]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[31]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[7]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[23]' (FDE) to 'serializer/data_to_send_reg[79]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[15]' (FDE) to 'serializer/data_to_send_reg[79]'
 INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[79]' (FDE) to 'serializer/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[15]' (FDE) to 'serializer/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[55]' (FDE) to 'serializer/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[23]' (FDE) to 'serializer/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[39]' (FDE) to 'serializer/data_to_send_reg[71]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[71]' (FDE) to 'serializer/data_to_send_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[7] )
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[61]' (FDE) to 'serializer/data_to_send_reg[60]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[29]' (FDE) to 'serializer/data_to_send_reg[28]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[45]' (FDE) to 'serializer/data_to_send_reg[44]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[77]' (FDE) to 'serializer/data_to_send_reg[76]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[13]' (FDE) to 'serializer/data_to_send_reg[12]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[71]' (FDE) to 'serializer/data_to_send_reg[63]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\data_to_send_reg[63] )
 INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[53]' (FDE) to 'serializer/data_to_send_reg[52]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[21]' (FDE) to 'serializer/data_to_send_reg[20]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[45]' (FDE) to 'serializer/data_to_send_reg[44]'
 INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[37]' (FDE) to 'serializer/data_to_send_reg[36]'
-INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[69]' (FDE) to 'serializer/data_to_send_reg[68]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[29]' (FDE) to 'serializer/data_to_send_reg[28]'
 INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[5]' (FDE) to 'serializer/data_to_send_reg[4]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[21]' (FDE) to 'serializer/data_to_send_reg[20]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[13]' (FDE) to 'serializer/data_to_send_reg[12]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[77]' (FDE) to 'serializer/data_to_send_reg[76]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[69]' (FDE) to 'serializer/data_to_send_reg[68]'
+INFO: [Synth 8-3886] merging instance 'serializer/data_to_send_reg[61]' (FDE) to 'serializer/data_to_send_reg[60]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (serializer/\current_byte_to_send_reg[7] )
 INFO: [Synth 8-3886] merging instance 'serializer/current_byte_to_send_reg[5]' (FDE) to 'serializer/current_byte_to_send_reg[4]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (tx/\data_register_reg[7] )
 INFO: [Synth 8-3886] merging instance 'tx/data_register_reg[5]' (FDE) to 'tx/data_register_reg[4]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -471,13 +476,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1011.910 ; gain = 376.344
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:57 ; elapsed = 00:00:58 . Memory (MB): peak = 1007.445 ; gain = 372.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 1202.859 ; gain = 567.293
+Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 1209.266 ; gain = 574.086
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -489,7 +494,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 1244.918 ; gain = 609.352
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:21 . Memory (MB): peak = 1261.273 ; gain = 626.094
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -513,7 +518,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -526,7 +531,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:01:27 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -538,25 +543,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:29 ; elapsed = 00:01:30 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -573,15 +578,15 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |   959|
+|2     |CARRY4 |   958|
 |3     |LUT1   |     1|
-|4     |LUT2   |  2398|
+|4     |LUT2   |  2393|
 |5     |LUT3   |   795|
-|6     |LUT4   |  1834|
-|7     |LUT5   |   527|
-|8     |LUT6   |  3466|
-|9     |MUXF7  |     6|
-|10    |FDRE   |  1280|
+|6     |LUT4   |  1839|
+|7     |LUT5   |   525|
+|8     |LUT6   |  3477|
+|9     |MUXF7  |     1|
+|10    |FDRE   |  1287|
 |11    |IBUF   |     2|
 |12    |OBUF   |     1|
 |13    |OBUFT  |     3|
@@ -591,7 +596,7 @@ Report Instance Areas:
 +------+---------------+--------------------------+------+
 |      |Instance       |Module                    |Cells |
 +------+---------------+--------------------------+------+
-|1     |top            |                          | 11273|
+|1     |top            |                          | 11283|
 |2     |  AAPL_weight  |stock_weight              |   643|
 |3     |  AMZN_weight  |stock_weight_0            |   644|
 |4     |  GE_weight    |stock_weight_1            |   643|
@@ -605,34 +610,34 @@ Report Instance Areas:
 |12    |  WMT_weight   |stock_weight_8            |   647|
 |13    |  XOM_weight   |stock_weight_9            |   647|
 |14    |  convert_from |convert_from_ASCII        |    41|
-|15    |  convert_to   |convert_to_ASCII          |    64|
+|15    |  convert_to   |convert_to_ASCII          |    63|
 |16    |  mla          |MLA                       |  3552|
 |17    |  rx           |UART_RX                   |    75|
-|18    |  serializer   |parallel_to_serial_buffer |   212|
-|19    |  tx           |UART_TX                   |    48|
+|18    |  serializer   |parallel_to_serial_buffer |   224|
+|19    |  tx           |UART_TX                   |    47|
 +------+---------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 1265.641 ; gain = 630.461
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:01:27 . Memory (MB): peak = 1249.367 ; gain = 479.320
-Synthesis Optimization Complete : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 1249.367 ; gain = 613.801
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:19 ; elapsed = 00:01:26 . Memory (MB): peak = 1265.641 ; gain = 500.238
+Synthesis Optimization Complete : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1265.641 ; gain = 630.461
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 965 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 959 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1249.367 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1265.641 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-95 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+94 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 1249.367 ; gain = 851.484
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1249.367 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:40 . Memory (MB): peak = 1265.641 ; gain = 866.590
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1265.641 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/BidlackD/Documents/Git/ML-HFT-FPGA/ML-HFT-FPGA.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 13 14:19:29 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 14 11:40:32 2019...

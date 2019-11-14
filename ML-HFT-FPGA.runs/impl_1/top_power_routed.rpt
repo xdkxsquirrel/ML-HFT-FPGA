@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Nov 13 14:21:35 2019
+| Date             : Thu Nov 14 11:42:40 2019
 | Host             : Bidlack running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |    11304 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     7448 |     14600 |           51.01 |
-|   CARRY4       |    <0.001 |      959 |      3650 |           26.27 |
-|   Register     |    <0.001 |     1280 |     29200 |            4.38 |
-|   F7/F8 Muxes  |    <0.001 |        6 |     14600 |            0.04 |
+| Slice Logic    |    <0.001 |    11314 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     7456 |     14600 |           51.07 |
+|   CARRY4       |    <0.001 |      958 |      3650 |           26.25 |
+|   Register     |    <0.001 |     1287 |     29200 |            4.41 |
+|   F7/F8 Muxes  |    <0.001 |        1 |     14600 |           <0.01 |
 |   Others       |     0.000 |       38 |       --- |             --- |
-| Signals        |    <0.001 |     9467 |       --- |             --- |
+| Signals        |    <0.001 |     9485 |       --- |             --- |
 | I/O            |    <0.001 |        6 |       150 |            4.00 |
 | Static Power   |     0.061 |          |           |                 |
 | Total          |     0.062 |          |           |                 |
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.005 |       0.001 |      0.005 |
+| Vccint    |       1.000 |     0.006 |       0.001 |      0.005 |
 | Vccaux    |       1.800 |     0.009 |       0.000 |      0.009 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

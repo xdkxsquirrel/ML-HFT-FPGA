@@ -96,7 +96,7 @@ mux11to1 MUX(clk, data_ready_from_TSLA, data_ready_from_AAPL, data_ready_from_WM
         data_from_MSFT, data_from_GE, data_from_JPM, data_from_IBM, data_from_AMZN, stock_selected, output_to_hex_to_ascii, mux_data_ready);
 
 convert_to_ASCII convert_to(clk, serializer_active, mux_data_ready, output_to_hex_to_ascii, unserialized_data_valid, unserialized_data);
-parallel_to_serial_buffer serializer(clk, UART_active, unserialized_data_valid, unserialized_data, serialized_data_ready, serializer_active, transmit_byte);
+parallel_to_serial_buffer serializer(clk, UART_active, unserialized_data_valid, transmit_done, unserialized_data, serialized_data_ready, serializer_active, transmit_byte);
 UART_TX tx(clk, serialized_data_ready, transmit_byte, UART_active, pio47, transmit_done);
 
 endmodule
